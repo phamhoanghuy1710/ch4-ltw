@@ -14,25 +14,32 @@ public class customerInfo implements Serializable {
     private String lastName;
     private String email;
     private String birth;
-    private String respond;
+    private String like;
+    private String contact;
     private String heared;
+    private String respond;
+    
     
     public customerInfo (){
         firstName = "";
         lastName = "";
         email  = "";
         birth = "";
+        contact = "";
+        like = "";
         respond = "";
     }
     
-    public customerInfo (String firstName, String lastName, String email, String birth, String respond, String heared){
+    public customerInfo (String firstName, String lastName, String email, String birth, String like, String contact, String respond, String heared){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email  = email;
         this.birth = birth;
+        this.like = like;
+        this.contact = contact;
         this.heared = heared;
         if (respond == null){
-            this.respond = "Thank for your attention about our company";
+            this. respond = "Thanks for your interest in our company";
         }
         else{
             this.respond = respond;
@@ -76,5 +83,17 @@ public class customerInfo implements Serializable {
     }
     public void setHeared(String heared){
         this.heared = heared;
+    }
+    public String getLike(){
+        return like;
+    }
+    public void setLike(String like){
+        this.like = like;
+    }
+    public String getContact(){
+        return contact;
+    }
+    public void setContact (String contact){
+        this.contact = contact;
     }
 }

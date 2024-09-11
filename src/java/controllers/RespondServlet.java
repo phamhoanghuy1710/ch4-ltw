@@ -30,9 +30,9 @@ public class RespondServlet extends HttpServlet {
            String lastName = request.getParameter("lastName");
            String email = request.getParameter("email");
            String birthStr = request.getParameter("birth");
-           String like = request.getParameter("likeAnnouncement");
-           String annoucement = request.getParameter("emailAnnouncement");
-           String method = request.getParameter("contact");
+           String like = request.getParameter("like");
+           String contact = request.getParameter("contact");
+           String method = request.getParameter("contactby");
            String respond = null;
            // xu ly birth day 
            LocalDate birthDay = LocalDate.parse(birthStr);
@@ -41,8 +41,8 @@ public class RespondServlet extends HttpServlet {
            // het xu ly birth day
            
            // xu ly phuong thuc lien lac 
-           if (like != null || annoucement != null){
-               respond = "Thank for your attention about our company" + ". We will contact you by " + method;
+           if (like != null || contact != null){
+               respond = "Thanks for your interest, we will be in touch with you by " + method;
            }
            // het xu ly phuong thuc lien lac 
            
@@ -50,7 +50,7 @@ public class RespondServlet extends HttpServlet {
            String heared = request.getParameter("heared");
            // het xu ly nghe qua dau
            
-           customerInfo info = new customerInfo (firstName,lastName,email,formatBirthDay,respond,heared);
+           customerInfo info = new customerInfo (firstName,lastName,email,formatBirthDay,like,contact,respond,heared);
            request.setAttribute("customerInfo", info);
            url = "/respond.jsp";
        }

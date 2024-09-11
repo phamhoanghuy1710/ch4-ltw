@@ -24,6 +24,9 @@
         <span>${customerInfo.lastName}</span><br>
         <label class="lblInfo">Day of Birth:</label>
         <span>${customerInfo.birth}</span><br>
+        <label>Your requires: </label><br>
+        <p>${customerInfo.like}</p>
+        <p>${customerInfo.contact}</p>
         <h1>${customerInfo.respond}</h1>
     </body>
 </html>
